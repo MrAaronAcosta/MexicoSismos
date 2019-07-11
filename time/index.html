@@ -1,0 +1,54 @@
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<!-- Plotly chart will be drawn inside this DIV -->
+<div id="myDiv"></div>
+  <script>
+  /* JAVASCRIPT CODE GOES HERE */
+  Plotly.d3.csv("SSN.csv", function(err, rows){
+
+function unpack(rows, key) {
+return rows.map(function(row) { return row[key]; });
+}
+
+
+var trace1 = {
+type: "scatter",
+mode: "lines",
+x: unpack(rows, 'Ano'),
+y: unpack(rows, 'Magnitud'),
+line: {color: '#17BECF'}
+}
+
+// var trace2 = {
+// type: "scatter",
+// mode: "lines",
+// x: unpack(rows, 'Date'),
+// y: unpack(rows, 'AAPL.Low'),
+// line: {color: '#7F7F7F'}
+// }
+
+var data = [trace1];
+
+var layout = {
+title: 'Sismos desde 1920',
+xaxis: {
+  range: ['1920', '2019'],
+  type: 'linear'
+},
+yaxis: {
+  autorange: true,
+  range: [0, 11],
+  type: 'linear'
+}
+};
+
+Plotly.newPlot('myDiv', data, layout);
+})
+
+
+  </script>
+</body>
+</html>

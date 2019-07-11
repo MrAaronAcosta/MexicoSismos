@@ -1,0 +1,18 @@
+
+      body {
+        margin: 0px;
+      }
+      .tick text, .legendCells text {
+        font-size: 14pt;
+        font-family: sans-serif;
+      }
+      .tickline {
+        stroke: #E0E0E0;
+      }
+      .axis-label, .legend-label {
+        fill: black;
+        font-size: 18pt;
+        font-family: sans-serif;
+      }
+      .dotmarker {
+      }

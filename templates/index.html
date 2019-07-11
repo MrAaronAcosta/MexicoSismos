@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js'></script> -->
+  <!--  D3' -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <title>Sismos_MexMun</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Leaflet CSS' -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+  <!-- Leaflet Java script' -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+  <!--Api Key-->
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <!--Our Java script-->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+  <script type="text/javascript" src="static/js/logic.js"></script> <!-- Our mapa 7 dias -->
+  <script type="text/javascript" src="static/js/logic2.js"></script> <!-- Our mapa mexico-->
+  <!--NUEVO MAPA 1-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+
+  <!--D3 cdn-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+  <!-- Our CSS -->
+  <link rel="stylesheetmap" type="text/css" href="static/css/stylemap7.css">
+  <link rel="stylesheetmap" type="text/css" href="static/css/stylemap3.css">
+
+  <!--NUEVO MAPA 2-->
+  <link rel="stylesheet" type="text/css" href="static/css/stylemapmex.css"> 
+   <!--NUEVO MAPA 2-->
+  <!-- stylin' -->
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/agency.css">
+  <!-- Custom fonts for this template -->
+  <!-- <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="../static/images/mundo.png">
+  <!-- sliders -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/css/bootstrap-slider.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+  <!-- stylin' -->
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/agency.css">
+  <!-- Custom fonts for this template -->
+  <!-- <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
+
+  <!-- Cmapa 3-->
+  <!-- Custom fonts for this template -->
+<style>
+#map3
+body { margin: 0; position: fixed; top: 0; right: 0; bottom: 0; left: 0; }
+    
+    .land {
+      fill: black;
+      fill-opacity: 0.1;
+      stroke: black;
+      stroke-width: 0.5;
+    }
+    
+    .earthquake {
+      fill-opacity: 0.5;
+      stroke: black;
+      stroke-width: 0.5;
+    }
+    
+    text {
+      font-family: sans-serif;
+    }
+    
+    .pulse {
+      fill: none;
+      stroke: black;
+      stroke-width: 0.5;
+    }
+
+
+</style>
+
+
+
+
+
+</head>
+
+  <!-- Intro -->
+  <div class="row">
+    <div class="jumbotron text-center">
+      <div class="overlay"></div>
+      <div class="inner">
+        <h1><span>Sismos en México y el mundo.</span></h1>
+        <h3 class="h3-white">Extracción  datos recopilados de 1900-2019 Servicio Sismológico Nacional . También se ocupo United States Geological Survey (USGS) para el mapa de 7 días anteriores y el de las útimas 24 horas.</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 style="color:whitesmoke" class="section-heading text-uppercase">Navega </h2>
+          <h3 class="section-subheading text-muted">Click en cualquiera de las secciones que desees navegar.</h3>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <a href="#mapa"><img src="../static/images/iconmap.png" width=180px alt="map icon" class="img-fluid"></a>
+          <h4 class="service-heading">Mapa</h4>
+          <p class="text-muted">Tres mapas distintos sobre los sismos en México y el mundo.</p>
+        </div>
+        <div class="col-md-4">
+          <a href="#graficas"><img src="../static/images/plot.png" width=180px alt="plot icon" class="img-fluid"></a>
+          <h4 class="service-heading">Gráficas</h4>
+          <p class="text-muted">Explora las gráficas de sismos en México con datos de SSN.</p>
+        </div>
+        <div class="col-md-4">
+          <a href="#team"><img src="../static/images/team.png" width=180px alt="team icon" class="img-fluid"></a>
+          <h4 class="service-heading">Otros</h4>
+          <p class="text-muted">Datos sobre sismos en México.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light" id="mapa" style="padding: 20px">
+  <div class="container">
+    <!-- Mapa sismos  7 d-->
+    <h2 class="row whitespace" id="mapa2">Mapa del mundo últimas 24 horas</h2>
+    <!--<div class="row whitespace" style="padding-bottom: 0px"> -->
+      <div class="row whitespace" style="padding-top: -150px">
+        <div class="col-md-12">
+        <div id="map" style="height: 650px;" ></div>
+      
+        </div>   
+      </div>  
+    </div>
+    
+    </section>
+    
+  <!-- Mapa mex -->
+  <section class="bg-light" id="mapa2" style="padding: 20px">
+    <div class="container">
+      <div class="row whitespace">
+      <h2>Mapa  México</h2>
+      <div class="row" style="padding-top: -150px">
+        <div class="col-md-12">
+          <div id="map2" style="height: 650px;"></div>
+        </div>
+      </div>
+
+      <div class="row" style="padding-top: 25px">
+        
+          
+        </div>
+        <div class="row" style="padding-top: 25px">
+          
+            
+          </div>
+
+        <div class="row whitespace">
+        <div class="col-md-12 text-left">
+          <p class="text-left">Mapa de los sismos en México , con datos tomados de los registros del Servicio Sismológico Nacional
+            
+          </p>
+        </div> 
+      </div>
+    </div>
+  </section>
+  <!-- Mapa bola se -->
+  <section class="bg-light" id="map3" style="padding: 20px">
+    <div class="container">
+      <div class="row whitespace">
+      <h2>Mapa del mundo últimas 7 días</h2>
+      <div class="row" style="padding-top: -150px">
+        <div class="col-md-12">
+          <div id="map3" style="height: 650px;"></div>
+          <script type="text/javascript" src="logic2.js"> </script> 
+        </div>
+      </div>
+      <div class="row" style="padding-top: 25px">
+        </div>
+        <div class="row" style="padding-top: 25px"> 
+        </div>
+        <div class="row whitespace">
+        <div class="col-md-12 text-left">
+          <p class="text-left">Mapa de los sismos  alrededor del mundo durante los ultimos 7 días con datos tomados de United States Geological Survey
+            
+          </p>
+        </div> 
+      </div>
+    </div>
+  </section>
+    <!-- bar charts -->
+
+  <section class="bg-light" id="graficas" style="padding: 20px">
+    <div class="container">
+      <div class="row whitespace">
+      <h2>Gráficas de los sismos en México</h2>
+      <div class="row" style="padding-top: 25px">
+        <div class="col-md-12">
+          <div id="bar"></div>
+          <script type="text/javascript" src="static/js/plot.js"></script>
+        </div>
+      </div>
+
+      <div class="row" style="padding-top: 25px">
+        <center>
+      <img  src="static/images/año.gif" alt="año" style="max-width: 800px; max-height: 800px"> 
+    </center>
+        </div>
+        <div class="row" style="padding-top: 25px">
+          
+            
+          </div>
+
+        <div class="row whitespace">
+        <div class="col-md-12 text-left">
+          <p class="text-left">Animación por año de 1900-2018 de los sismos en México.Representado con la información del Servicio Sismológico Nacional.
+            
+          </p>
+        </div> 
+      </div>
+    </div>
+  </section>
+     
+  <!-- radar charts -->
+  <section class="bg-light" id="team" style="padding: 80px">
+  <div class="container">
+    <h2 class="whitespace">D  A  T  O  S</h2>
+    <div class="row whitespace">
+      <div class="col-md-6">
+        <!-- <canvas id="radar" width="250" height="250"></canvas> -->
+        <img src="static/images/magnitud.png" alt="magnitud" style="max-width: 500px; max-height: 900px" >
+      </div>
+      <div class="col-md-5">
+        <h3>Gráfica de 1900-2017</h3>
+        <p class="center">La gráfica no presenta los sismos de menor intensidad a 6.5 MW (magnitud del momento).Esta magnitud se determina a partir del momento sísmico, que es una
+          cantidad proporcional al área de ruptura (i.e., al tamaño de la falla geológica que rompió) y al deslizamiento que ocurra en la falla
+      </p>
+      </div>
+    </div>
+    <div class="row whitespace">
+      <div class="col-md-6">
+        <h3>Magnitud de los sismos por década</h3>
+        <p>Se muestra la magnitud del momento (MW) de sismos por década, desde 1900 hasta 2018.Representado con la información del Servicio Sismológico Nacional.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <!-- <canvas id="barGraph" width="300" height="250"></canvas> -->
+        <img src="static/images/sismosDecada.png" alt="sismosDecada" style="max-width: 400px; max-height: 420px" >
+      </div>
+    </div>
+
+
+
+   <!--< <div class="row whitespace">
+      <div class="col-md-6">
+        NO <canvas id="radar" width="250" height="250"></canvas> ->
+        <img src="static/images/año.gif" alt="año" style="max-width: 400px; max-height: 400px">
+      </div>
+      <div class="col-md-6">
+        <h3>Ubicación de los sismos</h3>
+        <p>Animación por año de 1900-2018 de los sismos en México.Representado con la información del Servicio Sismológico Nacional.
+      </p>
+      </div>
+    </div>
+  </div>-->
+        
+
+</head>
+
+
+<body>
+<!-- Our JS -->
+<script type="text/javascript" src="static/js/logic.js"></script> <!-- Our mapa 7 dias -->
+<script type="text/javascript" src="static/js/logic2.js"></script> <!-- Our mapa mexico-->
+<script type="text/javascript" src="static/js/mapmex.js"></script> <!-- Our mapa mexico-->
+<script type="text/javascript" src="static/js/plot.js"></script> <!-- plot -->
+<!-- API key -->
+<script type="text/javascript" src="static/js/config.js"></script>
+
+</body>
+
+</html>
+</body>
+</html>
+
+<head>
+  
+  

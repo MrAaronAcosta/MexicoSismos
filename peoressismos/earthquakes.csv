@@ -1,0 +1,17 @@
+rank,year,name,country,continent,magnitude,cost
+1,2011,"Tōhoku","Japan","Asia",9.1,235
+2,1995,"Great Hanshin","Japan","Asia",6.9,200
+3,2008,"Sichuan","China","Asia",8.0,86
+4,1994,"Northridge","United States","North America",6.7,28.5
+5,1980,"Irpinia","Italy","Europe",6.9,15
+6,1976,"Tangshan","China","Asia",7.8,10
+7,2011,"Christchurch","New Zealand","Oceania",6.3,27.5
+8,2004,"Chūetsu","Japan","Asia",6.8,28
+9,1999,"İzmit","Turkey","Europe",7.6,20
+10,2010,"Chile earthquake","Chile","South America",8.8,22.5
+11,2012,"Emilia","Italy","Europe",6.1,15.8
+12,1999,"Jiji","Taiwan","Asia",7.6,10
+13,2015,"Nepal","Nepal","Asia",7.8,10
+14,1906,"San Francisco","United States","North America",7.8,0.4
+15,1923,"Great Kantō","Japan","Asia",7.9,0.6,
+16,1989,"Loma Prieta","United States","North America",6.9,5.8
